@@ -33,3 +33,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 auth0 following this pritty nice tutorial [next.js-auth0](https://github.com/auth0/nextjs-auth0)
 
+## some thoughts
+
+i need to understand in depth how this works, apparently i added some security, but ...
+on the post page, where part of the data is shown or hidden depending on the user is logged in,
+I have this props thing with all the data that I am trying to hide.
+then -> the approach needs to be done differently i think, this doesn't seem like the right way to do it.
