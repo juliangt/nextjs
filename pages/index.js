@@ -5,6 +5,8 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
+import { useUser } from '@auth0/nextjs-auth0';
+
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   return {
@@ -15,6 +17,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
+  
+  const { user, error, isLoading } = useUser();
+
   return (
     <Layout home>
       <Head>
@@ -27,6 +32,20 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a> {' '}
           and now <a href='https://github.com/auth0/nextjs-auth0'> nextjs-auth0 </a> . ) {' '}
         </p>
+      </section>
+
+      <section>
+        {user && (
+          <>
+            <a href='/api/auth/logout' > Wanna logout? </a>
+          </>
+        )}
+
+        {!user && (
+          <>
+            <a href='/api/auth/login' > Wanna login? </a>
+          </>
+        )}
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
