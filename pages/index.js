@@ -21,10 +21,11 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>i'm just trying to follow this next.js tutorial</p>
+        <p>this static site is now secured by auth0. ponele.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          (This is a sample website - you’ll be building a site like this on {' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a> {' '}
+          and now <a href='https://github.com/auth0/nextjs-auth0'> nextjs-auth0 </a> . ) {' '}
         </p>
       </section>
 
